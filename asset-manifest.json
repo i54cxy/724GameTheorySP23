@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/game-theory-demo/static/css/main.073c9b0a.css",
+    "main.js": "/game-theory-demo/static/js/main.c89a6219.js",
+    "static/js/787.36c0e332.chunk.js": "/game-theory-demo/static/js/787.36c0e332.chunk.js",
+    "static/media/logo.svg": "/game-theory-demo/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/game-theory-demo/index.html",
+    "main.073c9b0a.css.map": "/game-theory-demo/static/css/main.073c9b0a.css.map",
+    "main.c89a6219.js.map": "/game-theory-demo/static/js/main.c89a6219.js.map",
+    "787.36c0e332.chunk.js.map": "/game-theory-demo/static/js/787.36c0e332.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.c89a6219.js"
+  ]
+}
