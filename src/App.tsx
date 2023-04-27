@@ -1,26 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "@fontsource/roboto/400.css";
+import {
+    Breadcrumbs,
+    Link,
+    ThemeProvider,
+    Typography,
+    createTheme,
+} from "@mui/material";
+import { ReactElement, useState } from "react";
+import {
+    StyledAppContainer,
+    StyledBottomNav,
+    StyledContentContainer,
+} from "./App.styles";
+import { Content } from "./App.types";
+import { Home } from "./Home";
+import { PrisonerDilemma } from "./PrisonersDilemma";
+import { MedianVoterTheorem } from "./MedianVoterTheorem";
+import { BestResponse } from "./BestResponse/BestResponse";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const darkTheme = createTheme({
+    palette: {
+        mode: "dark",
+    },
+});
 
-export default App;
+export const App = () => {
+    const [content, setContent] = useState<Content>(Content.Home);
+
+    const ContentMap: { [key in Content]: ReactElement } = {
+        [Content.Home]: <Home setContent={setContent} />,
+        [Content.PrisonersDilemma]: <PrisonerDilemma setContent={setContent} />,
+        [Content.MedianVoterTheorem]: (
+            <MedianVoterTheorem setContent={setContent} />
+        ),
+        [Content.BestResponse]: <BestResponse setContent={setContent} />,
+    };
+
+    return (
+        <ThemeProvider theme={darkTheme}>
+            <StyledAppContainer>
+                <StyledContentContainer maxWidth="sm" fixed>
+                    {ContentMap[content]}
+                </StyledContentContainer>
+                <StyledBottomNav>
+                    <Breadcrumbs aria-label="breadcrumb">
+                        <Link color="inherit" underline="hover" href="/">
+                            {Content.Home}
+                        </Link>
+                        {content !== Content.Home && (
+                            <Typography color="text.primary">
+                                {content}
+                            </Typography>
+                        )}
+                    </Breadcrumbs>
+                </StyledBottomNav>
+            </StyledAppContainer>
+        </ThemeProvider>
+    );
+};
