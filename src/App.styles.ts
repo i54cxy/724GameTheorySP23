@@ -10,7 +10,7 @@ export const StyledAppContainer = styled(Box)`
 
 export const StyledContentContainer = styled(Container)`
     align-self: center;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     display: flex;
     justify-content: center;
     min-height: 640px;
