@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/724GameTheorySP23/static/css/main.b3c25832.css",
-    "main.js": "/724GameTheorySP23/static/js/main.630b507d.js",
+    "main.js": "/724GameTheorySP23/static/js/main.17b9d768.js",
     "static/js/787.36c0e332.chunk.js": "/724GameTheorySP23/static/js/787.36c0e332.chunk.js",
     "static/media/roboto-all-400-normal.woff": "/724GameTheorySP23/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
     "static/media/roboto-latin-400-normal.woff2": "/724GameTheorySP23/static/media/roboto-latin-400-normal.b009a76ad6afe4ebd301.woff2",
@@ -13,11 +13,11 @@
     "static/media/roboto-greek-ext-400-normal.woff2": "/724GameTheorySP23/static/media/roboto-greek-ext-400-normal.169619821ea93019d1bb.woff2",
     "index.html": "/724GameTheorySP23/index.html",
     "main.b3c25832.css.map": "/724GameTheorySP23/static/css/main.b3c25832.css.map",
-    "main.630b507d.js.map": "/724GameTheorySP23/static/js/main.630b507d.js.map",
+    "main.17b9d768.js.map": "/724GameTheorySP23/static/js/main.17b9d768.js.map",
     "787.36c0e332.chunk.js.map": "/724GameTheorySP23/static/js/787.36c0e332.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b3c25832.css",
-    "static/js/main.630b507d.js"
+    "static/js/main.17b9d768.js"
   ]
 }
