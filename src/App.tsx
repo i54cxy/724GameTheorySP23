@@ -1,6 +1,7 @@
 import "@fontsource/roboto/400.css";
 import {
     Breadcrumbs,
+    Button,
     Link,
     ThemeProvider,
     Typography,
@@ -13,10 +14,10 @@ import {
     StyledContentContainer,
 } from "./App.styles";
 import { Content } from "./App.types";
-import { Home } from "./Home";
-import { PrisonerDilemma } from "./PrisonersDilemma";
-import { MedianVoterTheorem } from "./MedianVoterTheorem";
 import { BestResponse } from "./BestResponse/BestResponse";
+import { Home } from "./Home";
+import { MedianVoterTheorem } from "./MedianVoterTheorem";
+import { PrisonerDilemma } from "./PrisonersDilemma";
 
 const darkTheme = createTheme({
     palette: {
@@ -36,6 +37,10 @@ export const App = () => {
         [Content.BestResponse]: <BestResponse setContent={setContent} />,
     };
 
+    const handleHomeOnClick = () => {
+        setContent(Content.Home);
+    };
+
     return (
         <ThemeProvider theme={darkTheme}>
             <StyledAppContainer>
@@ -44,9 +49,9 @@ export const App = () => {
                 </StyledContentContainer>
                 <StyledBottomNav>
                     <Breadcrumbs aria-label="breadcrumb">
-                        <Link color="inherit" underline="hover" href="/">
+                        <Button onClick={handleHomeOnClick}>
                             {Content.Home}
-                        </Link>
+                        </Button>
                         {content !== Content.Home && (
                             <Typography color="text.primary">
                                 {content}
