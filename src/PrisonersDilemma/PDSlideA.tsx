@@ -5,7 +5,7 @@ import { ToolTip } from "../Slides/ToolTip";
 export const PDSlideA = () => {
     return (
         <StyledSlideContainer>
-            <Typography>
+            <Typography component="span">
                 In the following games and visualizations, we’re going to
                 demonstrate some basic Game Theory concepts as well as some
                 analogical real-life examples, starting with the{" "}
@@ -30,6 +30,7 @@ export const PDSlideA = () => {
             </Typography>
 
             <img
+                alt={"Prisoner's Dilemma"}
                 src={
                     "https://live.staticflickr.com/8060/8245423564_0efd54b09c_b.jpg"
                 }

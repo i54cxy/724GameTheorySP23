@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, ButtonGroup, Card, Typography } from "@mui/material";
+import { Box, ButtonGroup, Card } from "@mui/material";
 
 export const StyledSlideContainer = styled(Box)`
     display: flex;

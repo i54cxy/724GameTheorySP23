@@ -1,4 +1,4 @@
-import { List, ListItem, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { StyledSlideContainer } from "../Slides/Slides.styles";
 
 export const PDSlideC = () => {

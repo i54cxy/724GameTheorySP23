@@ -1,12 +1,4 @@
-import {
-    Box,
-    Button,
-    Paper,
-    Step,
-    StepLabel,
-    Stepper,
-    Typography,
-} from "@mui/material";
+import { Box, Step, StepLabel, Stepper } from "@mui/material";
 import { IPrisonersDilemmaStepperProps } from "./PrisonersDilemma.types";
 
 export const PrisonersDilemmaStepper: React.FC<

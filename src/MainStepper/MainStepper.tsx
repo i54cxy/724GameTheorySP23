@@ -1,16 +1,6 @@
-import {
-    Box,
-    Button,
-    Paper,
-    Step,
-    StepButton,
-    StepLabel,
-    Stepper,
-    Typography,
-} from "@mui/material";
-import { useState } from "react";
-import { IMainStepperProps } from "./MainStepper.types";
+import { Box, Step, StepButton, StepLabel, Stepper } from "@mui/material";
 import { contentArray } from "../App.types";
+import { IMainStepperProps } from "./MainStepper.types";
 
 const steps = [
     {
@@ -32,14 +22,13 @@ export const MainStepper: React.FC<IMainStepperProps> = ({
     children,
     setContent,
 }) => {
-    const [activeStep, setActiveStep] = useState(contentIndex);
     const handleStep = (index: number) => () => {
         setContent(contentArray[index]);
     };
 
     return (
         <Box sx={{ left: "30px", position: "fixed" }}>
-            <Stepper nonLinear activeStep={activeStep} orientation="vertical">
+            <Stepper nonLinear activeStep={contentIndex} orientation="vertical">
                 {steps.map((step, index) => (
                     <Step key={step.label}>
                         <StepButton color="inherit" onClick={handleStep(index)}>

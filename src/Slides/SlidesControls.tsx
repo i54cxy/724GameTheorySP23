@@ -44,6 +44,15 @@ export const SlidesControls: React.FC<ISlidesControlsProps> = ({
                     >
                         Restart
                     </Button>
+                    {index > 0 && (
+                        <Button
+                            variant="text"
+                            startIcon={<NavigateBeforeIcon />}
+                            onClick={handlePrevious}
+                        >
+                            Previous
+                        </Button>
+                    )}
                     <Button
                         variant="contained"
                         endIcon={<NavigateNextIcon />}

@@ -8,23 +8,29 @@ import { PDSlideC } from "./PDSlideC";
 import { PDSlideZ } from "./PDSlideZ";
 
 const slides = [<PDSlideA />, <PDSlideB />, <PDSlideC />, <PDSlideZ />];
+const breakpoints = [0, 2, 6];
 
 export const PDSlides: React.FC<ISlidesProps> = ({
     setActiveStep,
     setContent,
 }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const breakpoints = [2];
     useEffect(() => {
-        setActiveStep(
-            breakpoints
-                .slice()
-                .reverse()
-                .findIndex((bp) => {
-                    return currentSlide >= bp;
-                }) + 1
-        );
-    }, [currentSlide]);
+        if (currentSlide === slides.length - 1) {
+            setActiveStep(breakpoints.length);
+        } else {
+            setActiveStep(
+                breakpoints.length -
+                    breakpoints
+                        .slice()
+                        .reverse()
+                        .findIndex((bp) => {
+                            return currentSlide >= bp;
+                        }) -
+                    1
+            );
+        }
+    }, [currentSlide, setActiveStep]);
     const handlePrevious = () => {
         setCurrentSlide((currentSlide) => currentSlide - 1);
     };
