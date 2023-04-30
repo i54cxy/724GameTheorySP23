@@ -1,36 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Content } from "../App.types";
 import { ISlidesProps, StyledSlidesContainer } from "../Slides";
 import { SlidesControls } from "../Slides/SlidesControls";
-import { PDSlideA } from "./PDSlideA";
-import { PDSlideB } from "./PDSlideB";
-import { PDSlideC } from "./PDSlideC";
-import { PDSlideZ } from "./PDSlideZ";
-
-const slides = [<PDSlideA />, <PDSlideB />, <PDSlideC />, <PDSlideZ />];
-const breakpoints = [0, 2, 6];
 
 export const PDSlides: React.FC<ISlidesProps> = ({
+    breakpoints,
+    currentSlide,
     setActiveStep,
     setContent,
+    setCurrentSlide,
+    slides,
 }) => {
-    const [currentSlide, setCurrentSlide] = useState(0);
     useEffect(() => {
-        if (currentSlide === slides.length - 1) {
-            setActiveStep(breakpoints.length);
-        } else {
-            setActiveStep(
-                breakpoints.length -
-                    breakpoints
-                        .slice()
-                        .reverse()
-                        .findIndex((bp) => {
-                            return currentSlide >= bp;
-                        }) -
-                    1
-            );
-        }
-    }, [currentSlide, setActiveStep]);
+        setActiveStep(
+            breakpoints.length -
+                breakpoints
+                    .slice()
+                    .reverse()
+                    .findIndex((bp) => {
+                        return currentSlide >= bp;
+                    }) -
+                1
+        );
+    }, [breakpoints, currentSlide, setActiveStep, slides.length]);
+
     const handlePrevious = () => {
         setCurrentSlide((currentSlide) => currentSlide - 1);
     };

@@ -6,7 +6,7 @@ export const PDSlideZ = () => {
         <StyledSlideContainer>
             <Typography>We've completed everything in this chapter!</Typography>
             <Typography>
-                Next, we're going to look at a more complex game. We'll explore
+                Next, we're going to look at more complex games. We'll explore
                 how availability of information would affect players' strategies
                 and learn to stand in other players' shoes.
             </Typography>

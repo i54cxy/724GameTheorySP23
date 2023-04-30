@@ -27,11 +27,24 @@ export const MainStepper: React.FC<IMainStepperProps> = ({
     };
 
     return (
-        <Box sx={{ left: "30px", position: "fixed" }}>
+        <Box
+            display={{
+                xs: "none",
+                sm: "none",
+                md: "none",
+                lg: "block",
+                xl: "block",
+            }}
+            sx={{ left: "30px", position: "fixed" }}
+        >
             <Stepper nonLinear activeStep={contentIndex} orientation="vertical">
                 {steps.map((step, index) => (
-                    <Step key={step.label}>
-                        <StepButton color="inherit" onClick={handleStep(index)}>
+                    <Step key={step.label} completed={index < contentIndex}>
+                        <StepButton
+                            disabled={false}
+                            color="inherit"
+                            onClick={handleStep(index)}
+                        >
                             <StepLabel>{step.label}</StepLabel>
                         </StepButton>
 
