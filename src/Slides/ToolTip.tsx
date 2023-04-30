@@ -33,7 +33,12 @@ export const ToolTip: React.FC<IToolTipProps> = ({
                         <Typography variant="h6" component="div">
                             {title}
                         </Typography>
-                        <Typography variant="body2">{description}</Typography>
+                        <Typography
+                            variant="body2"
+                            style={{ whiteSpace: "pre-line" }}
+                        >
+                            {description}
+                        </Typography>
                     </CardContent>
                     {href!! && (
                         <CardActions>
