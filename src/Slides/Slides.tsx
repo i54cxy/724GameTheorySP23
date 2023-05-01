@@ -3,7 +3,8 @@ import { Content } from "../App.types";
 import { ISlidesProps, StyledSlidesContainer } from "../Slides";
 import { SlidesControls } from "../Slides/SlidesControls";
 
-export const PDSlides: React.FC<ISlidesProps> = ({
+export const Slides: React.FC<ISlidesProps> = ({
+    activeStep,
     breakpoints,
     currentSlide,
     setActiveStep,
@@ -34,7 +35,16 @@ export const PDSlides: React.FC<ISlidesProps> = ({
         setCurrentSlide(0);
     };
     const handleFinish = () => {
-        setContent(Content.MedianVoterTheorem);
+        setContent((content) => {
+            switch (content) {
+                case Content.PrisonersDilemma:
+                    return Content.MedianVoterTheorem;
+                case Content.MedianVoterTheorem:
+                    return Content.BestResponse;
+                default:
+                    return Content.Home;
+            }
+        });
     };
 
     return (
@@ -43,6 +53,7 @@ export const PDSlides: React.FC<ISlidesProps> = ({
             <SlidesControls
                 index={currentSlide}
                 total={slides.length}
+                lastTopic={activeStep === 3}
                 handlePrevious={handlePrevious}
                 handleNext={handleNext}
                 handleRestart={handleRestart}
