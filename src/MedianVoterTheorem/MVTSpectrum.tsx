@@ -37,7 +37,7 @@ export const MVTSpectrum: React.FC<IMVTSpectrumProps> = ({
                         <StyledCellButton
                             disableRipple={!interactive}
                             index={index}
-                            iteratedElimination={iteratedElimination}
+                            iteratedelimination={iteratedElimination}
                             key={index}
                             onClick={() => {
                                 if (interactive && setSelection) {

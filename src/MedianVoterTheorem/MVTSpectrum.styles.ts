@@ -12,7 +12,7 @@ export const StyledContainer = styled.div`
 
 export interface IStyledCellButtonProps {
     index: number;
-    iteratedElimination: number;
+    iteratedelimination: number;
 }
 
 const redColorPalette = ["#a70000", "#ff0000", "#ff5252", "#ff7b7b", "#ffbaba"];
@@ -24,7 +24,7 @@ export const StyledCellButton = styled(Button)<IStyledCellButtonProps>`
     width: ${size}px;
     align-items: center;
     justify-content: center;
-    ${({ index, iteratedElimination }) => {
+    ${({ index, iteratedelimination: iteratedElimination }) => {
         const level = index > 4 ? 10 - index : index + 1;
         if (level <= iteratedElimination) {
             return css`
