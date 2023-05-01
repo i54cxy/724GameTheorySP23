@@ -18,8 +18,8 @@ import { PDSlideM } from "./PDSlideM";
 import { PDSlideN } from "./PDSlideN";
 import { PDSlideO } from "./PDSlideO";
 import { PDSlideP } from "./PDSlideP";
-import { PDSlideZ } from "./PDSlideZ";
-import { PDSlides } from "./PDSlides";
+import { PDSlideQ } from "./PDSlideQ";
+import { Slides } from "../Slides";
 
 const steps = [
     {
@@ -48,7 +48,7 @@ const steps = [
     },
 ];
 
-const slides = [
+const slides: JSX.Element[] = [
     <PDSlideA />, // 0: 0
     <PDSlideB />,
     <PDSlideC />, // 1: 2
@@ -65,7 +65,7 @@ const slides = [
     <PDSlideN />, // 5: 13
     <PDSlideO />, // 6: 14
     <PDSlideP />, //
-    <PDSlideZ />, // 7: 16
+    <PDSlideQ />, // 7: 16
 ];
 const breakpoints = [0, 2, 6, 9, 10, 13, 14, 16];
 
@@ -83,7 +83,8 @@ export const PrisonerDilemma: React.FC<IContentProps> = ({ setContent }) => {
                     setCurrentSlide={setCurrentSlide}
                 />
             </MainStepper>
-            <PDSlides
+            <Slides
+                activeStep={activeStep}
                 currentSlide={currentSlide}
                 setCurrentSlide={setCurrentSlide}
                 breakpoints={breakpoints}

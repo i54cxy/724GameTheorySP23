@@ -7,12 +7,13 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import ReplayIcon from "@mui/icons-material/Replay";
 
 export const SlidesControls: React.FC<ISlidesControlsProps> = ({
-    index,
-    total,
-    handlePrevious,
-    handleNext,
-    handleRestart,
     handleFinish,
+    handleNext,
+    handlePrevious,
+    handleRestart,
+    index,
+    lastTopic,
+    total,
 }) => {
     return (
         <StyledButtonGroup>
@@ -58,7 +59,7 @@ export const SlidesControls: React.FC<ISlidesControlsProps> = ({
                         endIcon={<NavigateNextIcon />}
                         onClick={handleFinish}
                     >
-                        Continue
+                        {lastTopic ? "Finished" : "Continue"}
                     </Button>
                 </>
             )}

@@ -10,6 +10,7 @@ export interface IToolTipProps {
 }
 
 export interface ISlidesProps {
+    activeStep: number;
     breakpoints: number[];
     currentSlide: number;
     setActiveStep: React.Dispatch<React.SetStateAction<number>>;
@@ -19,12 +20,13 @@ export interface ISlidesProps {
 }
 
 export interface ISlidesControlsProps {
-    index: number;
-    total: number;
-    handlePrevious: () => void;
-    handleNext: () => void;
-    handleRestart: () => void;
     handleFinish: () => void;
+    handleNext: () => void;
+    handlePrevious: () => void;
+    handleRestart: () => void;
+    index: number;
+    lastTopic: boolean;
+    total: number;
 }
 
 export const toolTipNoteProps = {
