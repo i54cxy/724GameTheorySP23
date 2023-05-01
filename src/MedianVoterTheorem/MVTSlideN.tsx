@@ -5,6 +5,7 @@ import {
     ToolTip,
     toolTipQuickDefinitionProps,
     toolTipQuickDefinitionLinkProps,
+    tollTipHighlightProps,
 } from "../Slides";
 
 export const MVTSlideN = () => {
@@ -26,6 +27,15 @@ export const MVTSlideN = () => {
                 </Link>
                 . Note that a convergence like we see in this case is not
                 guaranteed.
+            </Typography>
+            <Typography component="span">
+                There we have it, the{" "}
+                <Typography {...tollTipHighlightProps}>
+                    median voter theorem
+                </Typography>
+                , but from a Game Theory perspective, which states that in a
+                voting game like this, voters will elect the candidate closest
+                to the median voter.
             </Typography>
             <Typography component="span">
                 It's also important to note that this is only possible because I
