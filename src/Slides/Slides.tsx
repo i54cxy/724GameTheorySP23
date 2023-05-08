@@ -7,6 +7,7 @@ export const Slides: React.FC<ISlidesProps> = ({
     activeStep,
     breakpoints,
     currentSlide,
+    lastTopic = false,
     setActiveStep,
     setContent,
     setCurrentSlide,
@@ -53,7 +54,7 @@ export const Slides: React.FC<ISlidesProps> = ({
             <SlidesControls
                 index={currentSlide}
                 total={slides.length}
-                lastTopic={activeStep === 3}
+                lastTopic={lastTopic}
                 handlePrevious={handlePrevious}
                 handleNext={handleNext}
                 handleRestart={handleRestart}

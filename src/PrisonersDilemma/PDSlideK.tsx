@@ -1,12 +1,12 @@
 import { Link, Typography } from "@mui/material";
 import {
-    IPayoffMatrix,
+    IPayoffMatrix2x2,
     PayoffMatrix2X2,
     StyledSlideContainer,
 } from "../Slides";
 
 export const PDSlideK = () => {
-    const PMData: IPayoffMatrix = {
+    const PMData: IPayoffMatrix2x2 = {
         p1: "Player 1",
         p2: "Player 2",
         r0: "Player 1 adopts strategy A",

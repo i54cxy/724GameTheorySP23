@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { CellIndices } from "./PayoffMatrix.types";
 
-const cellSize = 120;
+const cellWidth = 120;
 
 const margin = 4;
 
@@ -12,8 +12,8 @@ interface IStyledCellProps {
 }
 
 export const StyledCell = styled.div<IStyledCellProps>`
-    width: ${cellSize}px;
-    height: ${cellSize}px;
+    width: ${cellWidth}px;
+    height: ${cellWidth}px;
     outline: 1px solid beige;
     position: relative;
 
@@ -43,7 +43,7 @@ export const StyledContainer = styled.div`
 
 export const StyledCellSeparator = styled.div`
     height: 1px;
-    width: ${cellSize * Math.sqrt(2)}px;
+    width: ${cellWidth * Math.sqrt(2)}px;
     background-color: beige;
     transform: rotate(45deg);
     transform-origin: top left;
@@ -53,24 +53,24 @@ export const StyledCellBottomLeft = styled.div`
     align-items: center;
     bottom: ${margin}px;
     display: flex;
-    height: ${(cellSize - margin) / 2}px;
+    height: ${(cellWidth - margin) / 2}px;
     justify-content: center;
     left: ${margin}px;
     position: absolute;
     text-align: center;
-    width: ${(cellSize - margin) / 2}px;
+    width: ${(cellWidth - margin) / 2}px;
     line-break: anywhere;
 `;
 
 export const StyledCellTopRight = styled.div`
     align-items: center;
     display: flex;
-    height: ${(cellSize - margin) / 2}px;
+    height: ${(cellWidth - margin) / 2}px;
     justify-content: center;
     position: absolute;
     right: ${margin}px;
     top: ${margin}px;
     text-align: center;
-    width: ${(cellSize - margin) / 2}px;
+    width: ${(cellWidth - margin) / 2}px;
     line-break: anywhere;
 `;

@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { IPayoffMatrix2x2Props } from "./PayoffMatrix.types";
+import { IPayoffMatrix3x2Props } from "./PayoffMatrix.types";
 import {
     StyledCell,
     StyledCellBottomLeft,
@@ -7,16 +7,16 @@ import {
     StyledCellTopRight,
     StyledContainer,
     StyledRow,
-} from "./PayoffMatrix2X2.styles";
+} from "./PayoffMatrix2X3.styles";
 import { PayoffMatrixDataCell } from "./PayoffMatrixDataCell";
 import { StyledCellContent } from "./PayoffMatrixDateCell.styles";
 
-export const PayoffMatrix2X2: React.FC<IPayoffMatrix2x2Props> = ({
+export const PayoffMatrix2X3: React.FC<IPayoffMatrix3x2Props> = ({
     data,
     highlightBackground,
     highlightData,
 }) => {
-    const { p1, p2, r0, r1, c0, c1, d00, d01, d10, d11 } = data;
+    const { p1, p2, r0, r1, c0, c1, c2, d00, d01, d02, d10, d11, d12 } = data;
 
     return (
         <StyledContainer>
@@ -49,6 +49,14 @@ export const PayoffMatrix2X2: React.FC<IPayoffMatrix2x2Props> = ({
                         <Typography variant="h6">{c1}</Typography>
                     </StyledCellContent>
                 </StyledCell>
+                <StyledCell
+                    indices={[0, 3]}
+                    highlightBackground={highlightBackground}
+                >
+                    <StyledCellContent>
+                        <Typography variant="h6">{c2}</Typography>
+                    </StyledCellContent>
+                </StyledCell>
             </StyledRow>
             <StyledRow>
                 <StyledCell
@@ -75,6 +83,16 @@ export const PayoffMatrix2X2: React.FC<IPayoffMatrix2x2Props> = ({
                 >
                     <PayoffMatrixDataCell
                         data={d01}
+                        indices={[0, 1]}
+                        highlightData={highlightData}
+                    />
+                </StyledCell>
+                <StyledCell
+                    indices={[1, 2]}
+                    highlightBackground={highlightBackground}
+                >
+                    <PayoffMatrixDataCell
+                        data={d02}
                         indices={[0, 1]}
                         highlightData={highlightData}
                     />
@@ -106,6 +124,16 @@ export const PayoffMatrix2X2: React.FC<IPayoffMatrix2x2Props> = ({
                     <PayoffMatrixDataCell
                         data={d11}
                         indices={[1, 1]}
+                        highlightData={highlightData}
+                    />
+                </StyledCell>
+                <StyledCell
+                    indices={[2, 3]}
+                    highlightBackground={highlightBackground}
+                >
+                    <PayoffMatrixDataCell
+                        data={d12}
+                        indices={[1, 2]}
                         highlightData={highlightData}
                     />
                 </StyledCell>

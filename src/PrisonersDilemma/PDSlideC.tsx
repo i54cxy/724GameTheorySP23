@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import {
-    IPayoffMatrix,
+    IPayoffMatrix2x2,
     PayoffMatrix2X2,
     StyledSlideContainer,
     ToolTip,
@@ -9,7 +9,7 @@ import {
 } from "../Slides";
 
 export const PDSlideC = () => {
-    const PMData: IPayoffMatrix = {
+    const PMData: IPayoffMatrix2x2 = {
         p1: "A",
         p2: "B",
         r0: "A stays silent",

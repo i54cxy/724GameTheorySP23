@@ -1,4 +1,4 @@
-export interface IPayoffMatrix {
+export interface IPayoffMatrix2x2 {
     // labels
     p1: string;
     p2: string;
@@ -6,10 +6,27 @@ export interface IPayoffMatrix {
     r1: string;
     c0: string;
     c1: string;
-    d00: [number, number];
-    d01: [number, number];
-    d10: [number, number];
-    d11: [number, number];
+    d00: CellData;
+    d01: CellData;
+    d10: CellData;
+    d11: CellData;
+}
+
+export interface IPayoffMatrix2x3 {
+    // labels
+    p1: string;
+    p2: string;
+    r0: string;
+    r1: string;
+    c0: string;
+    c1: string;
+    c2: string;
+    d00: CellData;
+    d01: CellData;
+    d02: CellData;
+    d10: CellData;
+    d11: CellData;
+    d12: CellData;
 }
 
 export enum DataHighlightType {
@@ -19,25 +36,30 @@ export enum DataHighlightType {
     None,
 }
 
-type DataIndices = 0 | 1;
-type DataCellIndices = [DataIndices, DataIndices];
+export type CellData = [number, number];
+
+export type CellIndices = [number, number];
+
 export type PayoffMatrixHighlightData = {
-    cell: DataCellIndices;
+    cell: CellIndices;
     // determines how values 1 & 2 should be highlighted
     type: [DataHighlightType, DataHighlightType];
 };
 
-type BGIndices = 0 | 1 | 2;
-export type BGCell = [BGIndices, BGIndices];
+export interface IPayoffMatrix2x2Props {
+    data: IPayoffMatrix2x2;
+    highlightBackground?: CellIndices[];
+    highlightData?: PayoffMatrixHighlightData[];
+}
 
-export interface IPayoffMatrixProps {
-    data: IPayoffMatrix;
-    highlightBackground?: BGCell[];
+export interface IPayoffMatrix3x2Props {
+    data: IPayoffMatrix2x3;
+    highlightBackground?: CellIndices[];
     highlightData?: PayoffMatrixHighlightData[];
 }
 
 export interface IPayoffMatrixDataCellProps {
     data: [number, number];
-    indices: DataCellIndices;
+    indices: CellIndices;
     highlightData?: PayoffMatrixHighlightData[];
 }
