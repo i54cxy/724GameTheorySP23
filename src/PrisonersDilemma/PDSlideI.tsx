@@ -1,17 +1,20 @@
 import { Typography } from "@mui/material";
 import {
-    BGCell,
+    CellIndices,
     DataHighlightType,
-    IPayoffMatrix,
-    PayoffMatrix,
+    IPayoffMatrix2x2,
+    PayoffMatrix2X2,
     PayoffMatrixHighlightData,
     StyledSlideContainer,
+    ToolTip,
     tollTipHighlightProps,
     tollTipWarningProps,
+    toolTipNoteProps,
+    toolTipQuickDefinitionLinkProps,
 } from "../Slides";
 
 export const PDSlideI = () => {
-    const PMData: IPayoffMatrix = {
+    const PMData: IPayoffMatrix2x2 = {
         p1: "A",
         p2: "B",
         r0: "A stays silent",
@@ -24,7 +27,7 @@ export const PDSlideI = () => {
         d11: [-5, -5],
     };
 
-    const PMHighlightBackground: BGCell[] = [
+    const PMHighlightBackground: CellIndices[] = [
         [0, 2],
         [1, 2],
         [2, 0],
@@ -49,14 +52,27 @@ export const PDSlideI = () => {
 
     return (
         <StyledSlideContainer>
-            <PayoffMatrix
+            <PayoffMatrix2X2
                 data={PMData}
                 highlightBackground={PMHighlightBackground}
                 highlightData={PMHighlightData}
             />
             <Typography component="span">
                 For a{" "}
-                <Typography {...tollTipHighlightProps}>rational</Typography>{" "}
+                <ToolTip
+                    {...toolTipNoteProps}
+                    href={
+                        "https://en.wikipedia.org/wiki/Rational_choice_theory"
+                    }
+                    description={
+                        "The assumption of rationality suggests that players will act solely in their own interests to benefit themseves, i.e. maximizing their own payoffs. In reality, it's sometimes inaccurate."
+                    }
+                    title={"Assumption of rationality"}
+                >
+                    <Typography {...toolTipQuickDefinitionLinkProps}>
+                        {"rational"}
+                    </Typography>
+                </ToolTip>{" "}
                 player who seeks to maximize their payoffs, they would always
                 choose to betray (the{" "}
                 <Typography {...tollTipHighlightProps}>

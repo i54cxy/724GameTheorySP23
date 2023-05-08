@@ -85,11 +85,11 @@ export const PrisonerDilemma: React.FC<IContentProps> = ({ setContent }) => {
             </MainStepper>
             <Slides
                 activeStep={activeStep}
-                currentSlide={currentSlide}
-                setCurrentSlide={setCurrentSlide}
                 breakpoints={breakpoints}
+                currentSlide={currentSlide}
                 setActiveStep={setActiveStep}
                 setContent={setContent}
+                setCurrentSlide={setCurrentSlide}
                 slides={slides}
             />
         </>

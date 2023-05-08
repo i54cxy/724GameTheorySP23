@@ -1,15 +1,15 @@
 import { Link, Typography } from "@mui/material";
 import {
-    BGCell,
+    CellIndices,
     DataHighlightType,
-    IPayoffMatrix,
-    PayoffMatrix,
+    IPayoffMatrix2x2,
+    PayoffMatrix2X2,
     PayoffMatrixHighlightData,
     StyledSlideContainer,
 } from "../Slides";
 
 export const PDSlideJ = () => {
-    const PMData: IPayoffMatrix = {
+    const PMData: IPayoffMatrix2x2 = {
         p1: "A",
         p2: "B",
         r0: "A stays silent",
@@ -22,7 +22,7 @@ export const PDSlideJ = () => {
         d11: [-5, -5],
     };
 
-    const PMHighlightBackground: BGCell[] = [
+    const PMHighlightBackground: CellIndices[] = [
         [0, 2],
         [1, 2],
         [2, 0],
@@ -39,7 +39,7 @@ export const PDSlideJ = () => {
 
     return (
         <StyledSlideContainer>
-            <PayoffMatrix
+            <PayoffMatrix2X2
                 data={PMData}
                 highlightBackground={PMHighlightBackground}
                 highlightData={PMHighlightData}

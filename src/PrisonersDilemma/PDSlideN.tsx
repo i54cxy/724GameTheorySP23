@@ -1,15 +1,15 @@
 import { Link, Typography } from "@mui/material";
 import {
-    BGCell,
+    CellIndices,
     DataHighlightType,
-    IPayoffMatrix,
-    PayoffMatrix,
+    IPayoffMatrix2x2,
+    PayoffMatrix2X2,
     PayoffMatrixHighlightData,
     StyledSlideContainer,
 } from "../Slides";
 
 export const PDSlideN = () => {
-    const PMData: IPayoffMatrix = {
+    const PMData: IPayoffMatrix2x2 = {
         p1: "Player 1",
         p2: "Player 2",
         r0: "Player 1 adopts strategy A",
@@ -22,7 +22,7 @@ export const PDSlideN = () => {
         d11: [2, 2],
     };
 
-    const PMHighlightBackground: BGCell[] = [
+    const PMHighlightBackground: CellIndices[] = [
         [1, 1],
         [2, 2],
     ];
@@ -53,7 +53,7 @@ export const PDSlideN = () => {
                 , a similar class two-player two-strategy game, as shown in the
                 payoff matrix below.
             </Typography>
-            <PayoffMatrix
+            <PayoffMatrix2X2
                 data={PMData}
                 highlightBackground={PMHighlightBackground}
                 highlightData={PMHighlightData}

@@ -1,9 +1,9 @@
 import { Typography } from "@mui/material";
 import {
-    BGCell,
+    CellIndices,
     DataHighlightType,
-    IPayoffMatrix,
-    PayoffMatrix,
+    IPayoffMatrix2x2,
+    PayoffMatrix2X2,
     PayoffMatrixHighlightData,
     StyledSlideContainer,
     ToolTip,
@@ -12,7 +12,7 @@ import {
 } from "../Slides";
 
 export const PDSlideO = () => {
-    const PMData: IPayoffMatrix = {
+    const PMData: IPayoffMatrix2x2 = {
         p1: "Player 1",
         p2: "Player 2",
         r0: "Drive on the left",
@@ -25,7 +25,7 @@ export const PDSlideO = () => {
         d11: [10, 10],
     };
 
-    const PMHighlightBackground: BGCell[] = [
+    const PMHighlightBackground: CellIndices[] = [
         [1, 1],
         [2, 2],
     ];
@@ -50,7 +50,7 @@ export const PDSlideO = () => {
                 of 10 meaning no crash and 0 meaning a crash, the payoff matrix
                 looks like this:
             </Typography>
-            <PayoffMatrix
+            <PayoffMatrix2X2
                 data={PMData}
                 highlightBackground={PMHighlightBackground}
                 highlightData={PMHighlightData}

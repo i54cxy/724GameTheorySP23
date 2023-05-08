@@ -1,14 +1,14 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { BGCell, DataHighlightType } from "./PayoffMatrix.types";
+import { CellIndices } from "./PayoffMatrix.types";
 
 const cellSize = 120;
 
 const margin = 4;
 
 interface IStyledCellProps {
-    indices: BGCell;
-    highlightBackground?: BGCell[];
+    indices: CellIndices;
+    highlightBackground?: CellIndices[];
 }
 
 export const StyledCell = styled.div<IStyledCellProps>`
@@ -73,44 +73,4 @@ export const StyledCellTopRight = styled.div`
     text-align: center;
     width: ${(cellSize - margin) / 2}px;
     line-break: anywhere;
-`;
-
-export const StyledCellContent = styled.div`
-    align-items: center;
-    display: flex;
-    margin: ${margin}px;
-    height: calc(100% - ${margin * 2}px);
-    justify-content: center;
-    text-align: center;
-    width: calc(100% - ${margin * 2}px);
-`;
-
-interface IStyledCellDataProps {
-    highlightType?: DataHighlightType;
-}
-
-export const StyledCellData = styled.div<IStyledCellDataProps>`
-    display: inline;
-    ${({ highlightType }) => {
-        switch (highlightType) {
-            case DataHighlightType.Superior: {
-                return css`
-                    color: #66bb6a;
-                `;
-            }
-            case DataHighlightType.Inferior: {
-                return css`
-                    color: #f44336;
-                `;
-            }
-            case DataHighlightType.Warning: {
-                return css`
-                    color: #ffa726;
-                `;
-            }
-            default: {
-                return undefined;
-            }
-        }
-    }}
 `;

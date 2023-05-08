@@ -11,6 +11,7 @@ export const MVTSlideB = () => {
     if (selection !== 0) {
         otherSelection = selection > 5 ? selection - 1 : selection + 1;
         percentage = (selection + otherSelection - 1) * 5;
+        percentage = selection > 5 ? 100 - percentage : percentage;
     }
 
     return (

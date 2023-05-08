@@ -13,6 +13,7 @@ export interface ISlidesProps {
     activeStep: number;
     breakpoints: number[];
     currentSlide: number;
+    lastTopic?: boolean;
     setActiveStep: React.Dispatch<React.SetStateAction<number>>;
     setContent: React.Dispatch<React.SetStateAction<Content>>;
     slides: JSX.Element[];
