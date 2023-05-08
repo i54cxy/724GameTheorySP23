@@ -19,13 +19,11 @@ export const MVTSlideC = () => {
                 no voters on the left of 1 or on the right of 10.
             </Typography>
             <Typography component="span">
-                Conjecture: strategies 1 is a dominated strategy. Note this
-                means that there exists another strategy that always gives a
-                better payoff.
-            </Typography>
-            <Typography component="span">
-                Let's test this hypothesis by picking strategy 2, and we'll
-                compare the payoffs from these 2 strategies.
+                We can make a reasonable guess that strategy 1 is a strategy
+                dominated by strategy 2. Then we can test if that's true by
+                compairing our payoffs when choosing strategy 1 against our
+                payoffs when choosing strategy 2. The process looks like the
+                following:
             </Typography>
         </StyledSlideContainer>
     );

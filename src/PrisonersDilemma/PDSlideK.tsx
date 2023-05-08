@@ -1,5 +1,9 @@
 import { Link, Typography } from "@mui/material";
-import { IPayoffMatrix, PayoffMatrix, StyledSlideContainer } from "../Slides";
+import {
+    IPayoffMatrix,
+    PayoffMatrix2X2,
+    StyledSlideContainer,
+} from "../Slides";
 
 export const PDSlideK = () => {
     const PMData: IPayoffMatrix = {
@@ -30,10 +34,7 @@ export const PDSlideK = () => {
                 , a similar class two-player two-strategy game, as shown in the
                 payoff matrix below.
             </Typography>
-            <PayoffMatrix data={PMData} />
-            <Typography component="span">
-                Here, we don't have a dominant or dominated strategy.
-            </Typography>
+            <PayoffMatrix2X2 data={PMData} />
         </StyledSlideContainer>
     );
 };

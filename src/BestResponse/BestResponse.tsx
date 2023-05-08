@@ -1,8 +1,8 @@
-import { Box } from "@mui/material";
 import React, { useState } from "react";
 import { IContentProps } from "../Content.types";
 import { MainStepper } from "../MainStepper";
 import { SlideStepper } from "../SlideStepper/SlideStepper";
+import { Slides } from "../Slides";
 
 const steps = [
     {
@@ -16,7 +16,7 @@ const steps = [
     },
 ];
 
-const slides = [];
+const slides: JSX.Element[] = [];
 const breakpoints = [0, 1, 2];
 
 export const BestResponse: React.FC<IContentProps> = ({ setContent }) => {
@@ -24,7 +24,7 @@ export const BestResponse: React.FC<IContentProps> = ({ setContent }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     return (
-        <Box>
+        <>
             <MainStepper contentIndex={3} setContent={setContent}>
                 <SlideStepper
                     activeStep={activeStep}
@@ -34,6 +34,15 @@ export const BestResponse: React.FC<IContentProps> = ({ setContent }) => {
                     setCurrentSlide={setCurrentSlide}
                 />
             </MainStepper>
-        </Box>
+            <Slides
+                activeStep={activeStep}
+                currentSlide={currentSlide}
+                setCurrentSlide={setCurrentSlide}
+                breakpoints={breakpoints}
+                setActiveStep={setActiveStep}
+                setContent={setContent}
+                slides={slides}
+            />
+        </>
     );
 };

@@ -8,7 +8,7 @@ import {
     StyledCellTopRight,
     StyledContainer,
     StyledRow,
-} from "./PayoffMatrix.styles";
+} from "./PayoffMatrix2X2.styles";
 import {
     IPayoffMatrixDataCellProps,
     IPayoffMatrixProps,
@@ -42,7 +42,7 @@ const PayoffMatrixDataCell: React.FC<IPayoffMatrixDataCellProps> = ({
     );
 };
 
-export const PayoffMatrix: React.FC<IPayoffMatrixProps> = ({
+export const PayoffMatrix2X2: React.FC<IPayoffMatrixProps> = ({
     data,
     highlightBackground,
     highlightData,

@@ -3,7 +3,7 @@ import {
     BGCell,
     DataHighlightType,
     IPayoffMatrix,
-    PayoffMatrix,
+    PayoffMatrix2X2,
     PayoffMatrixHighlightData,
     StyledSlideContainer,
 } from "../Slides";
@@ -47,7 +47,7 @@ export const PDSlideP = () => {
                 If they disagree with each other, nobody gets anything. The
                 payoff matrix is shown below:
             </Typography>
-            <PayoffMatrix
+            <PayoffMatrix2X2
                 data={PMData}
                 highlightBackground={PMHighlightBackground}
                 highlightData={PMHighlightData}

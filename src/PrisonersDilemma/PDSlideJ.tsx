@@ -3,7 +3,7 @@ import {
     BGCell,
     DataHighlightType,
     IPayoffMatrix,
-    PayoffMatrix,
+    PayoffMatrix2X2,
     PayoffMatrixHighlightData,
     StyledSlideContainer,
 } from "../Slides";
@@ -39,7 +39,7 @@ export const PDSlideJ = () => {
 
     return (
         <StyledSlideContainer>
-            <PayoffMatrix
+            <PayoffMatrix2X2
                 data={PMData}
                 highlightBackground={PMHighlightBackground}
                 highlightData={PMHighlightData}

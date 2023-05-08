@@ -3,7 +3,7 @@ import {
     BGCell,
     DataHighlightType,
     IPayoffMatrix,
-    PayoffMatrix,
+    PayoffMatrix2X2,
     PayoffMatrixHighlightData,
     StyledSlideContainer,
 } from "../Slides";
@@ -53,7 +53,7 @@ export const PDSlideN = () => {
                 , a similar class two-player two-strategy game, as shown in the
                 payoff matrix below.
             </Typography>
-            <PayoffMatrix
+            <PayoffMatrix2X2
                 data={PMData}
                 highlightBackground={PMHighlightBackground}
                 highlightData={PMHighlightData}

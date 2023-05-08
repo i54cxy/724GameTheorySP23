@@ -1,10 +1,9 @@
 import { Typography } from "@mui/material";
 import {
     IPayoffMatrix,
-    PayoffMatrix,
+    PayoffMatrix2X2,
     StyledSlideContainer,
     ToolTip,
-    tollTipHighlightProps,
     toolTipQuickDefinitionLinkProps,
     toolTipQuickDefinitionProps,
 } from "../Slides";
@@ -29,12 +28,21 @@ export const PDSlideC = () => {
                 Here’s chart that demonstrates all 4 possible outcomes of this
                 game:
             </Typography>
-            <PayoffMatrix data={PMData} />
+            <PayoffMatrix2X2 data={PMData} />
             <Typography component="span">
                 This is called the{" "}
-                <Typography {...tollTipHighlightProps}>
-                    payoff matrix
-                </Typography>
+                <ToolTip
+                    {...toolTipQuickDefinitionProps}
+                    href={"https://en.wikipedia.org/wiki/Normal-form_game"}
+                    description={
+                        "A payoff matrix is a table in which strategies of one player are listed in rows and those of the other player in columns and the cells show payoffs to each player such that the payoff of the row player is listed first."
+                    }
+                    title={"Payoff matrix"}
+                >
+                    <Typography {...toolTipQuickDefinitionLinkProps}>
+                        payoff matrix
+                    </Typography>
+                </ToolTip>
                 , also known as the{" "}
                 <ToolTip
                     {...toolTipQuickDefinitionProps}
@@ -42,7 +50,7 @@ export const PDSlideC = () => {
                     description={
                         "Normal form is a description of a game that is usually a payoff matrix, consisting the player's strategies and corresponding payoffs, or a specification of players' stategy spaces and payoff functions."
                     }
-                    title={"normal form"}
+                    title={"Normal form"}
                 >
                     <Typography {...toolTipQuickDefinitionLinkProps}>
                         normal form

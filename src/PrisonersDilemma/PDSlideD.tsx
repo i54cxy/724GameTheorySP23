@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 import {
     BGCell,
     IPayoffMatrix,
-    PayoffMatrix,
+    PayoffMatrix2X2,
     StyledSlideContainer,
     ToolTip,
     toolTipNoteProps,
@@ -31,7 +31,7 @@ export const PDSlideD = () => {
                 Here’s chart that demonstrates all 4 possible outcomes of this
                 game:
             </Typography>
-            <PayoffMatrix
+            <PayoffMatrix2X2
                 data={PMData}
                 highlightBackground={PMHighlightBackground}
             />

@@ -3,7 +3,7 @@ import {
     BGCell,
     DataHighlightType,
     IPayoffMatrix,
-    PayoffMatrix,
+    PayoffMatrix2X2,
     PayoffMatrixHighlightData,
     StyledSlideContainer,
     ToolTip,
@@ -50,7 +50,7 @@ export const PDSlideO = () => {
                 of 10 meaning no crash and 0 meaning a crash, the payoff matrix
                 looks like this:
             </Typography>
-            <PayoffMatrix
+            <PayoffMatrix2X2
                 data={PMData}
                 highlightBackground={PMHighlightBackground}
                 highlightData={PMHighlightData}

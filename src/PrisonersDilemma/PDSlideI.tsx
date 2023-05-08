@@ -3,11 +3,14 @@ import {
     BGCell,
     DataHighlightType,
     IPayoffMatrix,
-    PayoffMatrix,
+    PayoffMatrix2X2,
     PayoffMatrixHighlightData,
     StyledSlideContainer,
+    ToolTip,
     tollTipHighlightProps,
     tollTipWarningProps,
+    toolTipNoteProps,
+    toolTipQuickDefinitionLinkProps,
 } from "../Slides";
 
 export const PDSlideI = () => {
@@ -49,14 +52,27 @@ export const PDSlideI = () => {
 
     return (
         <StyledSlideContainer>
-            <PayoffMatrix
+            <PayoffMatrix2X2
                 data={PMData}
                 highlightBackground={PMHighlightBackground}
                 highlightData={PMHighlightData}
             />
             <Typography component="span">
                 For a{" "}
-                <Typography {...tollTipHighlightProps}>rational</Typography>{" "}
+                <ToolTip
+                    {...toolTipNoteProps}
+                    href={
+                        "https://en.wikipedia.org/wiki/Rational_choice_theory"
+                    }
+                    description={
+                        "The assumption of rationality suggests that players will act solely in their own interests to benefit themseves, i.e. maximizing their own payoffs. In reality, it's sometimes inaccurate."
+                    }
+                    title={"Assumption of rationality"}
+                >
+                    <Typography {...toolTipQuickDefinitionLinkProps}>
+                        {"rational"}
+                    </Typography>
+                </ToolTip>{" "}
                 player who seeks to maximize their payoffs, they would always
                 choose to betray (the{" "}
                 <Typography {...tollTipHighlightProps}>

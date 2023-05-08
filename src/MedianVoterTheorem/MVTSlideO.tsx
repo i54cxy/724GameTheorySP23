@@ -40,9 +40,10 @@ export const MVTSlideO = () => {
                     Two Generals' Problem
                 </Link>
                 , which has been proved to be unsolvable. Thus, common knowledge
-                implies not only that both know some piece of information, but
-                can also be absolutely confident that the rest no it, and that
-                the rest know that we know it, and so on.
+                implies much more information than mutual knowledge: that not
+                only all players know that piece of information, but they are
+                also confident that the others know it, and that the others know
+                that the others know it, and so on.
             </Typography>
         </StyledSlideContainer>
     );
